@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   
+  
+<mapper namespace="com.ayyll.mapper.PhotoMapper">
+  
+  <!-- 插入一条记录 -->  
+    <insert id="addPhoto" parameterType="Photo">  
+        insert into photo(user_id , type , url , create_time) values(#{user_id} , #{type} , #{url} ,#{create_time}) 
+    </insert>
+    <select id="queryPhotoById" parameterType="int" resultType="Photo">
+    	select * from photo where user_id=#{user_id}
+    </select>
+</mapper>  
